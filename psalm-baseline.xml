@@ -308,6 +308,7 @@
       <code>$configs</code>
       <code>$configs</code>
       <code>$sm</code>
+      <code>is_object($serviceManager) ? $serviceManager::class : gettype($serviceManager)</code>
       <code><![CDATA[$sm['module_class_method']]]></code>
       <code><![CDATA[$sm['service_manager']]]></code>
       <code><![CDATA[$sm['service_manager']]]></code>
@@ -351,6 +352,9 @@
     <MixedOperand>
       <code><![CDATA[$sm['module_class_method']]]></code>
     </MixedOperand>
+    <NoValue>
+      <code>$serviceManager</code>
+    </NoValue>
     <PossiblyNullArgument>
       <code>$module</code>
     </PossiblyNullArgument>
@@ -364,6 +368,8 @@
     <RedundantCondition>
       <code>gettype($config)</code>
       <code>is_object($config)</code>
+      <code>$serviceManager instanceof ServiceManager</code>
+      <code>gettype($serviceManager)</code>
     </RedundantCondition>
     <RedundantConditionGivenDocblockType>
       <code>is_scalar($config)</code>
@@ -372,6 +378,7 @@
     <TypeDoesNotContainType>
       <code>is_scalar($config)</code>
       <code>is_scalar($config) ? $config : gettype($config)</code>
+      <code>is_object($serviceManager)</code>
     </TypeDoesNotContainType>
     <UndefinedMethod>
       <code>getAbstractFactories</code>
@@ -638,9 +645,6 @@
     <ArgumentTypeCoercion>
       <code>$expectedInstanceOf</code>
     </ArgumentTypeCoercion>
-    <MixedInferredReturnType>
-      <code>array</code>
-    </MixedInferredReturnType>
   </file>
   <file src="test/Listener/OnBootstrapListenerTest.php">
     <InvalidPropertyAssignmentValue>
@@ -805,6 +809,10 @@
     <TypeDoesNotContainType>
       <code><![CDATA[is_array($this->loaders)]]></code>
     </TypeDoesNotContainType>
+    <MissingConstructor>
+      <code>$loaders</code>
+      <code>$includePath</code>
+    </MissingConstructor>
   </file>
   <file src="test/TestAsset/MockApplication.php">
     <MissingConstructor>
